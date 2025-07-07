@@ -1,9 +1,15 @@
 package com.matheusmendes.app.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,6 +22,14 @@ public class Atividade {
     private String nome;
     private String descricao;
     private Double preco;
+
+    @ManyToMany
+    @JoinTable(
+        name = "tb_ativade_participante",
+        joinColumns = @JoinColumn(name="atividade_id"),
+        inverseJoinColumns=@JoinColumn(name="participante_id")
+         )
+    private Set<Participante> participantes = new HashSet<>();
 
     public String getNome() {
         return this.nome;

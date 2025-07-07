@@ -30,7 +30,7 @@ public class Atividade {
 
     @ManyToMany
     @JoinTable(
-        name = "tb_ativade_participante",
+        name = "tb_atividade_participante",
         joinColumns = @JoinColumn(name="atividade_id"),
         inverseJoinColumns=@JoinColumn(name="participante_id")
          )
@@ -41,7 +41,7 @@ public class Atividade {
 
 
     @ManyToOne
-    @JoinColumn(name = "categoria_id",nullable = false)
+    @JoinColumn(name = "categoria_id")
 
     private Categoria categoria;
 

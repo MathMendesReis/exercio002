@@ -22,6 +22,7 @@ public class Participante {
     private String email;
 
     @ManyToMany(mappedBy = "participantes")
+    
     private Set<Atividade> atividades = new HashSet<>();
 
     public Long getId(){

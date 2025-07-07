@@ -13,6 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -37,6 +38,12 @@ public class Atividade {
 
     @OneToMany(mappedBy = "atividade",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Bloco> blocos = new ArrayList<>();
+
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_id",nullable = false)
+
+    private Categoria categoria;
 
     public String getNome() {
         return this.nome;
@@ -64,10 +71,11 @@ public class Atividade {
 
     public Atividade(){};
 
-    public Atividade( String nome,String descricao,Double preco){
+    public Atividade( String nome,String descricao,Double preco,Categoria categoria){
         this.nome= nome;
         this.descricao=descricao;
         this.preco=preco;
+        this.categoria = categoria;
      };
 
 }

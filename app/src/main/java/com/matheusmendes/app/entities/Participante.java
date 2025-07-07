@@ -3,6 +3,8 @@ package com.matheusmendes.app.entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.matheusmendes.app.utils.BaseEntity;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +16,7 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "participante_tb")
-public class Participante {
+public class Participante extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

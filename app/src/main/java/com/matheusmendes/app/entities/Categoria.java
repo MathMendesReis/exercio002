@@ -3,6 +3,8 @@ package com.matheusmendes.app.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.matheusmendes.app.utils.BaseEntity;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,10 +14,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "categoria_tb")
-public class Categoria {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Categoria extends BaseEntity{
+
     private String descricao;
 
     @OneToMany(mappedBy = "categoria")

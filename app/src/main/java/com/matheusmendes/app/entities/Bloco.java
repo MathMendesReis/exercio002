@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 
 import org.hibernate.annotations.ManyToAny;
 
+import com.matheusmendes.app.utils.BaseEntity;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,11 +17,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="bloco_tb")
-public class Bloco {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+public class Bloco extends BaseEntity {
 
     private Instant inicio;
     private Instant fim;

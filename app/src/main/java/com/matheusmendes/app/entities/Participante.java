@@ -36,6 +36,9 @@ public class Participante {
     public String getEmail(){
         return this.email;
     }
+    public Set<Atividade> getAtividades(){
+        return this.atividades;
+    }
 
     public Participante(){};
     public Participante( String nome,String email){

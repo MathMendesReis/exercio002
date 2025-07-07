@@ -47,6 +47,10 @@ public class Atividade {
         return this.id;
     }
 
+    public Set<Participante> getPartcipantes(){
+        return this.participantes;
+    }
+
     public Atividade(){};
 
     public Atividade( String nome,String descricao,Double preco){
